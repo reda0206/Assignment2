@@ -6,6 +6,9 @@ TagManager:
   tags:
   - EnemyTeleporter
   - Enemy
+  - ShooterEnemy
+  - Laser
+  - PlayerLaser
   layers:
   - Default
   - TransparentFX
