@@ -17,14 +17,13 @@ public class BaseEnemyScript : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position += new Vector3(0, -0.1f, 0);
-        
+        transform.position += new Vector3(0, -0.15f, 0);
         if (playerTransform != null)
         {
             float direction = Mathf.Sign(playerTransform.position.x - transform.position.x);
             if (Mathf.Abs(playerTransform.position.x - transform.position.x) > 0.05f)
             {
-                transform.position += new Vector3(direction * 0.1f, 0, 0);
+                transform.position += new Vector3(direction * 0.15f, 0, 0);
             }
         }
     }
@@ -33,8 +32,7 @@ public class BaseEnemyScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            transform.position = new Vector3(Random.Range(-21.9f, 21.9f), 11.8f, 0f);
         }
         else if (collision.gameObject.tag == "EnemyTeleporter")
         {
