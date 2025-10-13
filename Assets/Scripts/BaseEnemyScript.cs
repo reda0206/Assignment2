@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaseEnemyScript : MonoBehaviour
 {
+    public float flashDuration = 0.5f;
+    public Color flashColor = Color.red;
     private Transform playerTransform;
     void Start()
     {
@@ -33,6 +35,11 @@ public class BaseEnemyScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             transform.position = new Vector3(Random.Range(-21.9f, 21.9f), 11.8f, 0f);
+        }
+        else if (collision.gameObject.tag == "PlayerLaser")
+        {
+            transform.position = new Vector3(Random.Range(-21.9f, 21.9f), 11.8f, 0f);
+            Destroy(collision.gameObject);
         }
         else if (collision.gameObject.tag == "EnemyTeleporter")
         {

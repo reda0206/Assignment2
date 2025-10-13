@@ -24,6 +24,11 @@ public class ShooterEnemyScript : MonoBehaviour
         {
             transform.position = new Vector3(Random.Range(-21.9f, 21.9f), 7.5f, 0f);
         }
+        else if (collision.gameObject.tag == "PlayerLaser")
+        {
+            transform.position = new Vector3(Random.Range(-21.9f, 21.9f), 7.5f, 0f);
+            Destroy(collision.gameObject);
+        }
         else if (collision.gameObject.tag == "ShooterEnemy")
         {
             transform.position = new Vector3(Random.Range(-21.9f, 21.9f), 7.5f, 0f);

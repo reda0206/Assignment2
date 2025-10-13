@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float lives = 3;
+    public float lives = 10;
+    public TextMeshProUGUI livesText;
     public float respawnTime = 2.0f;
     private float lastRespawnTime = -Mathf.Infinity;
     public bool isInvincible = false;
     public float flashDuration = 2.5f;
     public Color flashColor = Color.clear;
     public GameObject playerProjectile;
-    public float shootCooldown = 0.5f;
+    public float shootCooldown = 0.25f;
     private float lastShootTime = -Mathf.Infinity;
 
     private Rigidbody2D rb;
@@ -20,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        livesText.text = "Lives:      x" + lives.ToString();
     }
 
 
@@ -69,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
     public void LoseLife()
     {
                lives -= 1;
+        livesText.text = "Lives:      x" + lives.ToString();
         if (lives > 0)
         {
          Respawn();
