@@ -414,3 +414,5 @@ MonoBehaviour:
   bossHealthText: {fileID: 1260190556732005337}
   flashColor: {r: 0, g: 0, b: 0, a: 0}
   flashDuration: 0.1
+  shootSound: {fileID: 8300000, guid: c123d1cdfd887344abf53943ab591814, type: 3}
+  hitSound: {fileID: 8300000, guid: 21303686befea1d4eb6ef9b9b3b6bc4d, type: 3}

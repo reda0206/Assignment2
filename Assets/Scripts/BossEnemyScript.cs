@@ -14,6 +14,8 @@ public class BossEnemyScript : MonoBehaviour
     public TextMeshProUGUI bossHealthText;
     public Color flashColor = Color.clear;
     public float flashDuration = 0.1f;
+    public AudioClip shootSound;
+    public AudioClip hitSound;
 
     void Start()
     {
@@ -32,6 +34,7 @@ public class BossEnemyScript : MonoBehaviour
             health -= 1f;
             bossHealthText.text = "Boss Health: " + health.ToString();
             StartCoroutine(DamageFlash());
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1f);
             Destroy(collision.gameObject);
             if (health <= 0)
             {
@@ -54,6 +57,7 @@ public class BossEnemyScript : MonoBehaviour
             Vector3 shootDirection = (playerTransform.position - transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().velocity = shootDirection * 10.0f;
+            AudioSource.PlayClipAtPoint(shootSound, transform.position, 1f);
             lastShootTime = Time.time;
         }
     }

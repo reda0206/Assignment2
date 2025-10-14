@@ -8,6 +8,8 @@ public class ShooterEnemyScript : MonoBehaviour
     public GameObject projectilePrefab;
     public float shootInterval = 2.5f;
     private float lastShootTime = -Mathf.Infinity;
+    public AudioClip shootSound;
+    public AudioClip hitSound;
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class ShooterEnemyScript : MonoBehaviour
         }
         else if (collision.gameObject.tag == "PlayerLaser")
         {
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1f);
             transform.position = new Vector3(Random.Range(-21.9f, 21.9f), 7.5f, 0f);
             Destroy(collision.gameObject);
         }
@@ -42,6 +45,7 @@ public class ShooterEnemyScript : MonoBehaviour
             Vector3 shootDirection = (playerTransform.position - transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().velocity = shootDirection * 5.0f;
+            AudioSource.PlayClipAtPoint(shootSound, transform.position, 1f);
             lastShootTime = Time.time;
         }
     }

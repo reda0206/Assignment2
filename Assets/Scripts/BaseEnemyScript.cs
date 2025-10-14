@@ -7,6 +7,7 @@ public class BaseEnemyScript : MonoBehaviour
     public float flashDuration = 0.5f;
     public Color flashColor = Color.red;
     private Transform playerTransform;
+    public AudioClip hitSound;
     void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -38,6 +39,7 @@ public class BaseEnemyScript : MonoBehaviour
         }
         else if (collision.gameObject.tag == "PlayerLaser")
         {
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1f);
             transform.position = new Vector3(Random.Range(-21.9f, 21.9f), 11.8f, 0f);
             Destroy(collision.gameObject);
         }

@@ -173,3 +173,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 4536279678753394160, guid: 68eb7f6d2e24e3047bf43f9172a6d5ba, type: 3}
   shootInterval: 2.5
+  shootSound: {fileID: 8300000, guid: 1b6a4309d696fb84e899c66b3b842039, type: 3}
+  hitSound: {fileID: 8300000, guid: cba73b3f6b4a1744582bf6e2a1ec9d7f, type: 3}

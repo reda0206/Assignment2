@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public Transform bossEnemy;
     public GameObject pauseMenuUi;
     public bool isPaused = false;
+    private List<AudioSource> audioSources = new List<AudioSource>();
+    public List<AudioSource> excludedAudioSources = new List<AudioSource>();
 
     private void Awake()
     {
@@ -70,6 +72,7 @@ public class GameManager : MonoBehaviour
     {
         isPaused = true;
         pauseMenuUi.SetActive(true);
+        PauseAudio();
         Time.timeScale = 0f;
     }
 
@@ -77,7 +80,32 @@ public class GameManager : MonoBehaviour
     {
         isPaused = false;
         pauseMenuUi.SetActive(false);
+        ResumeAudio();
         Time.timeScale = 1f;
+    }
+
+    void PauseAudio()
+    {
+        foreach (AudioSource audio in FindObjectsOfType<AudioSource>())
+        {
+            if (!excludedAudioSources.Contains(audio) && audio.isPlaying)
+            {
+                audio.Pause();
+                audioSources.Add(audio);
+            }
+        }
+    }
+
+    void ResumeAudio()
+    {
+        for (int i = audioSources.Count - 1; i >= 0; i--)
+        {
+            if (audioSources[i])
+            {
+                audioSources[i].UnPause();
+                audioSources.RemoveAt(i);
+            }
+        }
     }
 
     public void QuitToMenuButton()

@@ -15,6 +15,11 @@ public class MainMenuButtons : MonoBehaviour
         SceneManager.LoadScene("InstructionsScene");
     }
 
+    public void CreditsButton()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
     public void QuitGameButton()
     {
         Application.Quit();

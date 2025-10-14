@@ -16,6 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject playerProjectile;
     public float shootCooldown = 0.25f;
     private float lastShootTime = -Mathf.Infinity;
+    public AudioClip shootSound;
+    public AudioClip hitSound;
 
     private Rigidbody2D rb;
 
@@ -51,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Instantiate(playerProjectile, transform.position + new Vector3(0, 1.0f, 0), Quaternion.identity);
             playerProjectile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 10.0f);
+            AudioSource.PlayClipAtPoint(shootSound, transform.position, 1f);
             lastShootTime = Time.time;
         }
 
@@ -60,23 +63,27 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" && !isInvincible)
         {
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1f);
             LoseLife();
         }
 
         else if (collision.gameObject.tag == "Laser" && !isInvincible)
         {
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1f);
             LoseLife();
             Destroy(collision.gameObject);
         }
 
         else if (collision.gameObject.tag == "BossLaser" && !isInvincible)
         {
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1f);
             LoseLife();
             Destroy(collision.gameObject);
         }
 
         else if (collision.gameObject.tag == "Boss" && !isInvincible)
         {
+            AudioSource.PlayClipAtPoint(hitSound, transform.position, 1f);
             LoseLife();
         }   
     }
