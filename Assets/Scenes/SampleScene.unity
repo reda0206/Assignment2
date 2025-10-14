@@ -12494,7 +12494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 111a84d7773c621409fd6b5aeed22847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 10
+  lives: 15
   livesText: {fileID: 284048514}
   respawnTime: 2
   isInvincible: 0

@@ -65,7 +65,7 @@ public class BossEnemyScript : MonoBehaviour
     private IEnumerator DamageFlash()
     {
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        Color originalColor = spriteRenderer.color;
+        Color originalColor = Color.white;
         float elapsedTime = 0f;
         while (elapsedTime < flashDuration)
         {
