@@ -10589,7 +10589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countDownText: {fileID: 2010278246}
-  countDownTime: 1
+  countDownTime: 120
   enemy: {fileID: 1331986566}
   enemy2: {fileID: 1220920700}
   enemy3: {fileID: 1598558578}
@@ -11154,7 +11154,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

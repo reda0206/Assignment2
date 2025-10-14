@@ -45,7 +45,7 @@ public class ShooterEnemyScript : MonoBehaviour
             Vector3 shootDirection = (playerTransform.position - transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
             projectile.GetComponent<Rigidbody2D>().velocity = shootDirection * 5.0f;
-            AudioSource.PlayClipAtPoint(shootSound, transform.position, 1f);
+            AudioSource.PlayClipAtPoint(shootSound, transform.position, 0.15f);
             lastShootTime = Time.time;
         }
     }
