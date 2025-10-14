@@ -4966,7 +4966,7 @@ GameObject:
   - component: {fileID: 181442735}
   m_Layer: 0
   m_Name: Barrier 3
-  m_TagString: Untagged
+  m_TagString: Barrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5334,8 +5334,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1694498815
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+    rgba: 1677786921
+  m_fontColor: {r: 0.15896213, g: 1, b: 0, a: 0.39215687}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5402,6 +5402,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284048512}
   m_CullTransparentMesh: 1
+--- !u!4 &301128345 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2267649821329267794, guid: 4c29fa5cb2bde4040bba02d435e417d0, type: 3}
+  m_PrefabInstance: {fileID: 680193700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &377566950
 GameObject:
   m_ObjectHideFlags: 0
@@ -10583,7 +10588,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77da4ac5d1337347871b8035c5461c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 2010278246}
+  countDownText: {fileID: 2010278246}
+  countDownTime: 1
+  enemy: {fileID: 1331986566}
+  enemy2: {fileID: 1220920700}
+  enemy3: {fileID: 1598558578}
+  shooterEnemy: {fileID: 1727306893}
+  shooterEnemy2: {fileID: 991530268}
+  shooterEnemy3: {fileID: 1123017467}
+  shooterEnemy4: {fileID: 987790532}
+  shooterEnemy5: {fileID: 301128345}
+  shooterEnemy6: {fileID: 750216619}
+  bossEnemy: {fileID: 371887947974138479, guid: 38de26629ece3a4408f2b53455725036, type: 3}
   pauseMenuUi: {fileID: 2099864773}
   isPaused: 0
 --- !u!1001 &680193700
@@ -10737,6 +10753,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &750216619 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2267649821329267794, guid: 4c29fa5cb2bde4040bba02d435e417d0, type: 3}
+  m_PrefabInstance: {fileID: 1088485618}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &801878155
 GameObject:
   m_ObjectHideFlags: 0
@@ -10751,7 +10772,7 @@ GameObject:
   - component: {fileID: 801878159}
   m_Layer: 0
   m_Name: Barrier
-  m_TagString: Untagged
+  m_TagString: Barrier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11117,6 +11138,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &987790532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2267649821329267794, guid: 4c29fa5cb2bde4040bba02d435e417d0, type: 3}
+  m_PrefabInstance: {fileID: 1012755713}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &991530268 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2267649821329267794, guid: 4c29fa5cb2bde4040bba02d435e417d0, type: 3}
+  m_PrefabInstance: {fileID: 888958901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1012755713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11288,6 +11319,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c29fa5cb2bde4040bba02d435e417d0, type: 3}
+--- !u!4 &1123017467 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2267649821329267794, guid: 4c29fa5cb2bde4040bba02d435e417d0, type: 3}
+  m_PrefabInstance: {fileID: 1065198315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1139319212
 GameObject:
   m_ObjectHideFlags: 0
@@ -11421,6 +11457,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139319212}
   m_CullTransparentMesh: 1
+--- !u!4 &1220920700 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8704443938696825475, guid: d9869ce71dd902846aaa0d5d7857b977, type: 3}
+  m_PrefabInstance: {fileID: 1990780954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1278893349
 GameObject:
   m_ObjectHideFlags: 0
@@ -11727,6 +11768,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1331986566 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8704443938696825475, guid: d9869ce71dd902846aaa0d5d7857b977, type: 3}
+  m_PrefabInstance: {fileID: 861992480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1540466916
 GameObject:
   m_ObjectHideFlags: 0
@@ -11817,6 +11863,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1598558578 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8704443938696825475, guid: d9869ce71dd902846aaa0d5d7857b977, type: 3}
+  m_PrefabInstance: {fileID: 595942518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1650943940
 GameObject:
   m_ObjectHideFlags: 0
@@ -11907,6 +11958,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db17330ed8706544caa22db9d94db5e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1727306893 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2267649821329267794, guid: 4c29fa5cb2bde4040bba02d435e417d0, type: 3}
+  m_PrefabInstance: {fileID: 3099173651384961985}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1837209005
 GameObject:
   m_ObjectHideFlags: 0
@@ -12741,8 +12797,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 1694498815
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.39215687}
+    rgba: 1694440960
+  m_fontColor: {r: 0, g: 0.11911154, b: 1, a: 0.39215687}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

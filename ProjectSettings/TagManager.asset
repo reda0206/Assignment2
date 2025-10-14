@@ -9,6 +9,9 @@ TagManager:
   - ShooterEnemy
   - Laser
   - PlayerLaser
+  - BossLaser
+  - Boss
+  - Barrier
   layers:
   - Default
   - TransparentFX

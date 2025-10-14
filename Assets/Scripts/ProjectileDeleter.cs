@@ -15,5 +15,9 @@ public class ProjectileDeleter : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        else if (collision.gameObject.tag == "BossLaser")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }

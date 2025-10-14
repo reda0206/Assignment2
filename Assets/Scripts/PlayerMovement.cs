@@ -68,6 +68,17 @@ public class PlayerMovement : MonoBehaviour
             LoseLife();
             Destroy(collision.gameObject);
         }
+
+        else if (collision.gameObject.tag == "BossLaser" && !isInvincible)
+        {
+            LoseLife();
+            Destroy(collision.gameObject);
+        }
+
+        else if (collision.gameObject.tag == "Boss" && !isInvincible)
+        {
+            LoseLife();
+        }   
     }
     public void LoseLife()
     {
@@ -90,11 +101,11 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = new Vector3(0, -7.5f, 0);
             lastRespawnTime = Time.time;
-            StartCoroutine(InvincibilityCoroutine());
+            StartCoroutine(Invincibility());
         }
     }
     
-    private IEnumerator InvincibilityCoroutine()
+    private IEnumerator Invincibility()
     {
         isInvincible = true;
         if (flashDuration > 0)

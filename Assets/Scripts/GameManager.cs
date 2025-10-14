@@ -7,7 +7,18 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public TextMeshProUGUI timerText;
+    public TextMeshProUGUI countDownText;
+    public float countDownTime = 120f;
+    public Transform enemy;
+    public Transform enemy2;
+    public Transform enemy3;
+    public Transform shooterEnemy;
+    public Transform shooterEnemy2;
+    public Transform shooterEnemy3;
+    public Transform shooterEnemy4;
+    public Transform shooterEnemy5;
+    public Transform shooterEnemy6;
+    public Transform bossEnemy;
     public GameObject pauseMenuUi;
     public bool isPaused = false;
 
@@ -26,12 +37,20 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        timerText.text = "Time: " + Time.time.ToString("F2") + "s";
+        countDownText.text = "Time: " + countDownTime.ToString("F1") + "s";
     }
 
     void Update()
     {
-        timerText.text = "Time: " + Time.time.ToString("F2") + "s";
+        countDownText.text = "Time: " + countDownTime.ToString("F1") + "s";
+        if (countDownTime > 0)
+        {
+            countDownTime -= Time.deltaTime;
+        }
+        else
+        {
+            SpawnBoss();
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -70,5 +89,23 @@ public class GameManager : MonoBehaviour
     public void QuitGameButton()
     {
         Application.Quit();
+    }
+
+    public void SpawnBoss()
+    {
+        if (enemy != null && enemy2 != null && enemy3 != null && shooterEnemy != null && shooterEnemy2 != null && shooterEnemy3 != null && shooterEnemy4 != null && shooterEnemy5 != null && shooterEnemy6 != null)
+        {
+            Destroy(enemy.gameObject);
+            Destroy(enemy2.gameObject);
+            Destroy(enemy3.gameObject);
+            Destroy(shooterEnemy.gameObject);
+            Destroy(shooterEnemy2.gameObject);
+            Destroy(shooterEnemy3.gameObject);
+            Destroy(shooterEnemy4.gameObject);
+            Destroy(shooterEnemy5.gameObject);
+            Destroy(shooterEnemy6.gameObject);
+
+            Instantiate(bossEnemy, new Vector3(0, 8, 0), Quaternion.identity);
+        }
     }
 }
