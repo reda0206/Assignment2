@@ -6,6 +6,6 @@ public class ProjectileGoUp : MonoBehaviour
 {
     void Update()
     {
-        transform.position += new Vector3(0, 0.1f, 0);
+        transform.position += new Vector3(0, 0.2f, 0);
     }
 }
